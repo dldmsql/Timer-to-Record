@@ -4,46 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="5"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
-    <FrameLayout
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <DatePicker
+        android:id="@+id/datePicker"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"
-        android:id="@+id/frag_view">
-        <CalendarView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/calenderView"/>
-    </FrameLayout>
-    <LinearLayout
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"/>
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/btn1"
-            android:text="@string/writeBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="1"/>
-        <Button
-            android:id="@+id/btn2"
-            android:text="@string/mainBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="1"/>
-        <Button
-            android:id="@+id/btn3"
-            android:text="@string/readBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="1"/>
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:background="@color/teal_200"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/content"
+        android:background="@color/teal_200"
+        android:lines="10"/>
+    <Button
+        android:id="@+id/btnSmt"
+        android:text="@string/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 
 </LinearLayout>
