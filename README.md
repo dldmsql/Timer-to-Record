@@ -7,4 +7,5 @@
 4. 구현 내용 : 타이머 기능, 앱 내부 저장소 입출력 및 다이얼로그 창 띄우기, 음악 재생/정지 기능
 
 자세한 내용은 아래 노션 링크를 참고해주세요.
+
 [Timer to Record](https://sleepy-cartwheel-ace.notion.site/Timer-to-Record-ca3bc606cbde4ce6a4270a6d68fc1d62)
