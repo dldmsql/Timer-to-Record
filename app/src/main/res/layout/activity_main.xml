@@ -1,33 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".MainActivity">
-    <DatePicker
-        android:id="@+id/datePicker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:calendarViewShown="false"
-        android:datePickerMode="spinner"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/title"
-        android:background="@color/teal_200"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/content"
-        android:background="@color/teal_200"
-        android:lines="10"/>
-    <Button
-        android:id="@+id/btnSmt"
-        android:text="@string/submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
 
-</LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/today_black"
+        app:layout_constraintBottom_toTopOf="@id/remainMinutesTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/remainMinutesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00'"
+        android:textColor="@color/white"
+        android:textSize="120sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/remainSecondsTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/remainSecondsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00"
+        android:textColor="@color/white"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/remainMinutesTextView"
+        app:layout_constraintLeft_toRightOf="@id/remainMinutesTextView"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:max="60"
+        android:progressDrawable="@color/transparent"
+        android:thumb="@drawable/ic_thumb"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/remainMinutesTextView"
+        app:tickMark="@drawable/tick_mark" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button25min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_button"
+        android:text="25min"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_button"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:text="STOP"
+        app:layout_constraintLeft_toRightOf="@id/button25min"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonStore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_button"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:text="STORE"
+        app:layout_constraintLeft_toRightOf="@id/buttonStop"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_button"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:text="SEARCH"
+        app:layout_constraintLeft_toRightOf="@id/buttonStore"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        tools:ignore="HardcodedText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
